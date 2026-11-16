@@ -386,7 +386,7 @@
             "displayedTitle": "Mana Zone",
             "noQuickActions": false,
             "enterTapped": false,
-            "enterSpun": false,
+            "enterSpun": true,
             "isGroupForbidden": false,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false
@@ -747,7 +747,7 @@
             "displayedTitle": "Mana Zone",
             "noQuickActions": false,
             "enterTapped": false,
-            "enterSpun": false,
+            "enterSpun": true,
             "isGroupForbidden": false,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false
@@ -1056,7 +1056,7 @@
             "displayedTitle": "Mana Zone",
             "noQuickActions": false,
             "enterTapped": false,
-            "enterSpun": false,
+            "enterSpun": true,
             "isGroupForbidden": false,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false
