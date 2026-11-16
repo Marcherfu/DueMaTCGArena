@@ -1,0 +1,1192 @@
+{
+  "name": "Duel Masters",
+  "menuBackgroundImage": "https://duelsurfer.com/hero/sea-dark.webp",
+  "defaultRessources": {
+    "backgrounds": [],
+    "decksUrl": ""
+  },
+  "customHelp": "FORMATS\n- Standard (Original): 40 cards, max 4 copies. No Hyperspatial/GR cards and no cards that start the game in the Battle Zone.\n- Advance: 40 cards, max 4 copies. Put Psychic, Dragheart and Duelmate cards in the 'Hyperspatial Zone' category (max 8); Gacharange creatures go to the GR Zone (max 12).\n- DueParty: 60 cards including your Partner (a creature costing 5+, put it in the 'Partner' category), 1 copy per card, every card must share your Partner's civilizations. 6 shields, 6-card hand. Extra turns and alternate wins are ignored; each player can use only 1 card with the same name per turn.\nHALL OF FAME: Premium Hall of Fame cards are banned and Hall of Fame cards are limited to 1 (checked by the deck builder). Duo Premium Hall of Fame: Momoking JO, Future King Dragon and Momokingdam X, Forbidden Hero can't be in the same deck (not checked automatically).\nPLAY\n(1) Shields are dealt face down from your deck at the start. When a shield is broken, move it to your hand (check Shield Trigger first).\n(2) Mana: drag one card from your hand to your Mana Zone each turn. Multicolor cards enter tapped.\n(3) Cards sent to the Abyss go to the Abyss Zone (public).\n(4) Evolution: G + click on the base creature, then click the evolution creature (Group/Attach).\n(5) The counter can be used to track turns.",
+  "cardRotation": "90",
+  "cards": {
+    "dataUrl": "https://marcherfu.github.io/DueMaTCGArena/cardlist.json",
+    "cardBack": "https://duelsurfer.com/card-back-dm.webp"
+  },
+  "deckBuilding": {
+    "mainFilters": [
+      "type",
+      "Civilization",
+      "cost",
+      "Set",
+      "Race",
+      "Keywords",
+      "Rarity"
+    ],
+    "formats": [
+      {
+        "title": "Original",
+        "gameplay": "Original",
+        "legalityCode": "ORI",
+        "deckRuleset": "Original"
+      },
+      {
+        "title": "Advance",
+        "gameplay": "Advance",
+        "legalityCode": "ADV",
+        "deckRuleset": "Advance",
+        "customCategories": [
+          "Hyperspatial Zone"
+        ]
+      },
+      {
+        "title": "DueParty",
+        "gameplay": "DueParty",
+        "legalityCode": "DUP",
+        "deckRuleset": "DueParty",
+        "customCategories": [
+          "Partner"
+        ]
+      }
+    ],
+    "deckRulesets": {
+      "Original": {
+        "checkCardLegality": true,
+        "general": {
+          "min": 40,
+          "max": 40,
+          "maxPerCard": 4
+        }
+      },
+      "Advance": {
+        "checkCardLegality": true,
+        "general": {
+          "min": 40,
+          "max": 40,
+          "maxPerCard": 4
+        },
+        "categories": [
+          {
+            "category": "Hyperspatial Zone",
+            "min": 0,
+            "max": 8
+          },
+          {
+            "category": "Gacharange Creature",
+            "min": 0,
+            "max": 12
+          }
+        ]
+      },
+      "DueParty": {
+        "checkCardLegality": true,
+        "general": {
+          "min": 60,
+          "max": 60,
+          "maxPerCard": 1
+        },
+        "categories": [
+          {
+            "category": "Partner",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      }
+    }
+  },
+  "gameplay": {
+    "Original": {
+      "beforeGameStart": {
+        "initialBoardSetup": [
+          {
+            "drawFromTop": "Deck",
+            "count": 5,
+            "destination": "Shields"
+          }
+        ]
+      },
+      "mulligan": {
+        "triggeredByButton": false,
+        "startingHandSize": 5,
+        "mulliganCount": {
+          "min": 0,
+          "max": 0
+        },
+        "mulliganCycle": {
+          "info": "",
+          "steps": [
+            "toBottom",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 0,
+            "max": 5
+          },
+          "keepCardsOrder": true
+        }
+      },
+      "newTurn": {
+        "drawOnStart": false,
+        "sharedTurn": false,
+        "firstPlayerTokenName": "",
+        "drawPerTurn": 1
+      },
+      "defaultNotes": "",
+      "tokens": [],
+      "countersStartingValues": [
+        0
+      ],
+      "hideFacedDownCards": false,
+      "sections": {
+        "customSections": [
+          "Battle_Zone",
+          "Shields",
+          "Mana_Zone",
+          "Abyss"
+        ],
+        "layout": {
+          "direction": "column",
+          "isSymetricalForOpponents": false,
+          "isSymmetricalForOpponents": false,
+          "content": [
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Battle_Zone",
+                  "style": false
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Abyss",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                },
+                {
+                  "section": "Shields",
+                  "style": {
+                    "width": "40%"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Mana_Zone",
+                  "style": false
+                }
+              ]
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [],
+        "autoPlayFromHand": {
+          "Creature": "Battle_Zone",
+          "Evolution Creature": "Battle_Zone",
+          "Neo Creature": "Battle_Zone",
+          "G-Neo Creature": "Battle_Zone",
+          "Star Evolution Creature": "Battle_Zone",
+          "Star Max Evolution Creature": "Battle_Zone",
+          "Exile Creature": "Battle_Zone",
+          "Dream Creature": "Battle_Zone",
+          "Gacharange Creature": "Battle_Zone",
+          "Forbidden Creature": "Battle_Zone",
+          "Creature / Spell": "Battle_Zone",
+          "Tamaseed / Creature": "Battle_Zone",
+          "Psychic Creature": "Battle_Zone",
+          "Psychic Super Creature": "Battle_Zone",
+          "G-Neo Psychic Creature": "Battle_Zone",
+          "Evolution Psychic Creature": "Battle_Zone",
+          "Dragheart Creature": "Battle_Zone",
+          "Evolution Dragheart Creature": "Battle_Zone",
+          "Duelmate Creature": "Battle_Zone",
+          "Duelmate Super Creature": "Battle_Zone",
+          "Cross Gear": "Battle_Zone",
+          "Evolution Cross Gear": "Battle_Zone",
+          "Tamaseed": "Battle_Zone",
+          "Orega Aura": "Battle_Zone",
+          "Giga Orega Aura": "Battle_Zone",
+          "Castle": "Battle_Zone",
+          "Galaxy Castle": "Battle_Zone",
+          "D2 Field": "Battle_Zone",
+          "Historic Field": "Battle_Zone",
+          "Dragonic Field": "Battle_Zone",
+          "Dragheart Weapon": "Battle_Zone",
+          "Dragheart Fortress": "Battle_Zone",
+          "Psychic Cross Gear": "Battle_Zone",
+          "Spell": "Stack",
+          "Duelmate Spell": "Stack"
+        },
+        "autoPlayFromStack": {
+          "Spell": "Discard",
+          "Duelmate Spell": "Discard"
+        },
+        "sectionsDict": {
+          "Hand": {
+            "isDefaultSection": true,
+            "title": "Hand",
+            "isHidden": "opponent-only",
+            "height": "DEFAULT",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "autoPayFrom": true
+          },
+          "Discard": {
+            "isDefaultSection": true,
+            "title": "Discard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Graveyard",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Deck": {
+            "isDefaultSection": true,
+            "title": "Deck",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Stack": {
+            "isDefaultSection": true,
+            "title": "Stack",
+            "isHidden": "no",
+            "height": "HUGE",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Resolving",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Exile": {
+            "isDefaultSection": true,
+            "title": "Exile",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "ExileHidden": {
+            "isDefaultSection": true,
+            "title": "ExileHidden",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed hidden",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Sideboard": {
+            "isDefaultSection": true,
+            "title": "Sideboard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Battle_Zone": {
+            "title": "Battle_Zone",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battle Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Shields": {
+            "title": "Shields",
+            "isHidden": "yes",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Shield Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Mana_Zone": {
+            "title": "Mana_Zone",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Mana Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Abyss": {
+            "title": "Abyss",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Abyss Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          }
+        }
+      }
+    },
+    "Advance": {
+      "beforeGameStart": {
+        "initialBoardSetup": [
+          {
+            "drawFromTop": "Deck",
+            "count": 5,
+            "destination": "Shields"
+          }
+        ]
+      },
+      "mulligan": {
+        "triggeredByButton": false,
+        "startingHandSize": 5,
+        "mulliganCount": {
+          "min": 0,
+          "max": 0
+        },
+        "mulliganCycle": {
+          "info": "",
+          "steps": [
+            "toBottom",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 0,
+            "max": 5
+          },
+          "keepCardsOrder": true
+        }
+      },
+      "newTurn": {
+        "drawOnStart": false,
+        "sharedTurn": false,
+        "firstPlayerTokenName": "",
+        "drawPerTurn": 1
+      },
+      "defaultNotes": "",
+      "tokens": [],
+      "countersStartingValues": [
+        0
+      ],
+      "hideFacedDownCards": false,
+      "sections": {
+        "customSections": [
+          "Battle_Zone",
+          "Shields",
+          "Mana_Zone",
+          "Hyperspatial",
+          "GR",
+          "Abyss"
+        ],
+        "layout": {
+          "direction": "column",
+          "isSymetricalForOpponents": false,
+          "isSymmetricalForOpponents": false,
+          "content": [
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Battle_Zone",
+                  "style": false
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Hyperspatial",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                },
+                {
+                  "section": "GR",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                },
+                {
+                  "section": "Shields",
+                  "style": {
+                    "width": "40%"
+                  }
+                },
+                {
+                  "section": "Abyss",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Mana_Zone",
+                  "style": false
+                }
+              ]
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [
+          "Hyperspatial Zone->Hyperspatial",
+          "Psychic Creature->Hyperspatial",
+          "Psychic Super Creature->Hyperspatial",
+          "Psychic Cross Gear->Hyperspatial",
+          "G-Neo Psychic Creature->Hyperspatial",
+          "Evolution Psychic Creature->Hyperspatial",
+          "Dragheart Creature->Hyperspatial",
+          "Dragheart Weapon->Hyperspatial",
+          "Dragheart Fortress->Hyperspatial",
+          "Evolution Dragheart Creature->Hyperspatial",
+          "Duelmate Creature->Hyperspatial",
+          "Duelmate Super Creature->Hyperspatial",
+          "Duelmate Spell->Hyperspatial",
+          "Gacharange Creature->GR"
+        ],
+        "autoPlayFromHand": {
+          "Creature": "Battle_Zone",
+          "Evolution Creature": "Battle_Zone",
+          "Neo Creature": "Battle_Zone",
+          "G-Neo Creature": "Battle_Zone",
+          "Star Evolution Creature": "Battle_Zone",
+          "Star Max Evolution Creature": "Battle_Zone",
+          "Exile Creature": "Battle_Zone",
+          "Dream Creature": "Battle_Zone",
+          "Gacharange Creature": "Battle_Zone",
+          "Forbidden Creature": "Battle_Zone",
+          "Creature / Spell": "Battle_Zone",
+          "Tamaseed / Creature": "Battle_Zone",
+          "Psychic Creature": "Battle_Zone",
+          "Psychic Super Creature": "Battle_Zone",
+          "G-Neo Psychic Creature": "Battle_Zone",
+          "Evolution Psychic Creature": "Battle_Zone",
+          "Dragheart Creature": "Battle_Zone",
+          "Evolution Dragheart Creature": "Battle_Zone",
+          "Duelmate Creature": "Battle_Zone",
+          "Duelmate Super Creature": "Battle_Zone",
+          "Cross Gear": "Battle_Zone",
+          "Evolution Cross Gear": "Battle_Zone",
+          "Tamaseed": "Battle_Zone",
+          "Orega Aura": "Battle_Zone",
+          "Giga Orega Aura": "Battle_Zone",
+          "Castle": "Battle_Zone",
+          "Galaxy Castle": "Battle_Zone",
+          "D2 Field": "Battle_Zone",
+          "Historic Field": "Battle_Zone",
+          "Dragonic Field": "Battle_Zone",
+          "Dragheart Weapon": "Battle_Zone",
+          "Dragheart Fortress": "Battle_Zone",
+          "Psychic Cross Gear": "Battle_Zone",
+          "Spell": "Stack",
+          "Duelmate Spell": "Stack"
+        },
+        "autoPlayFromStack": {
+          "Spell": "Discard",
+          "Duelmate Spell": "Discard"
+        },
+        "sectionsDict": {
+          "Hand": {
+            "isDefaultSection": true,
+            "title": "Hand",
+            "isHidden": "opponent-only",
+            "height": "DEFAULT",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "autoPayFrom": true
+          },
+          "Discard": {
+            "isDefaultSection": true,
+            "title": "Discard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Graveyard",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Deck": {
+            "isDefaultSection": true,
+            "title": "Deck",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Stack": {
+            "isDefaultSection": true,
+            "title": "Stack",
+            "isHidden": "no",
+            "height": "HUGE",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Resolving",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Exile": {
+            "isDefaultSection": true,
+            "title": "Exile",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "ExileHidden": {
+            "isDefaultSection": true,
+            "title": "ExileHidden",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed hidden",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Sideboard": {
+            "isDefaultSection": true,
+            "title": "Sideboard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Battle_Zone": {
+            "title": "Battle_Zone",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battle Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Shields": {
+            "title": "Shields",
+            "isHidden": "yes",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Shield Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Hyperspatial": {
+            "title": "Hyperspatial",
+            "isHidden": "opponent-only",
+            "height": "18",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Hyperspatial Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "GR": {
+            "title": "GR",
+            "isHidden": "yes",
+            "height": "18",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "GR Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Mana_Zone": {
+            "title": "Mana_Zone",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Mana Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Abyss": {
+            "title": "Abyss",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Abyss Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          }
+        }
+      }
+    },
+    "DueParty": {
+      "beforeGameStart": {
+        "initialBoardSetup": [
+          {
+            "drawFromTop": "Deck",
+            "count": 6,
+            "destination": "Shields"
+          }
+        ]
+      },
+      "mulligan": {
+        "triggeredByButton": false,
+        "startingHandSize": 6,
+        "mulliganCount": {
+          "min": 0,
+          "max": 0
+        },
+        "mulliganCycle": {
+          "info": "",
+          "steps": [
+            "toBottom",
+            "draw"
+          ],
+          "selectionRange": {
+            "min": 0,
+            "max": 6
+          },
+          "keepCardsOrder": true
+        }
+      },
+      "newTurn": {
+        "drawOnStart": false,
+        "sharedTurn": false,
+        "firstPlayerTokenName": "",
+        "drawPerTurn": 1
+      },
+      "defaultNotes": "",
+      "tokens": [],
+      "countersStartingValues": [
+        0
+      ],
+      "hideFacedDownCards": false,
+      "sections": {
+        "customSections": [
+          "Battle_Zone",
+          "Shields",
+          "Mana_Zone",
+          "Partner_Zone",
+          "Abyss"
+        ],
+        "layout": {
+          "direction": "column",
+          "isSymetricalForOpponents": false,
+          "isSymmetricalForOpponents": false,
+          "content": [
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Battle_Zone",
+                  "style": false
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Partner_Zone",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                },
+                {
+                  "section": "Shields",
+                  "style": {
+                    "width": "40%"
+                  }
+                },
+                {
+                  "section": "Abyss",
+                  "style": {
+                    "width": "13.9vh"
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "row",
+              "style": {
+                "align": "center"
+              },
+              "isSymetricalForOpponents": true,
+              "isSymmetricalForOpponents": true,
+              "content": [
+                {
+                  "section": "Mana_Zone",
+                  "style": false
+                }
+              ]
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [
+          "Partner->Partner_Zone"
+        ],
+        "autoPlayFromHand": {
+          "Creature": "Battle_Zone",
+          "Evolution Creature": "Battle_Zone",
+          "Neo Creature": "Battle_Zone",
+          "G-Neo Creature": "Battle_Zone",
+          "Star Evolution Creature": "Battle_Zone",
+          "Star Max Evolution Creature": "Battle_Zone",
+          "Exile Creature": "Battle_Zone",
+          "Dream Creature": "Battle_Zone",
+          "Gacharange Creature": "Battle_Zone",
+          "Forbidden Creature": "Battle_Zone",
+          "Creature / Spell": "Battle_Zone",
+          "Tamaseed / Creature": "Battle_Zone",
+          "Psychic Creature": "Battle_Zone",
+          "Psychic Super Creature": "Battle_Zone",
+          "G-Neo Psychic Creature": "Battle_Zone",
+          "Evolution Psychic Creature": "Battle_Zone",
+          "Dragheart Creature": "Battle_Zone",
+          "Evolution Dragheart Creature": "Battle_Zone",
+          "Duelmate Creature": "Battle_Zone",
+          "Duelmate Super Creature": "Battle_Zone",
+          "Cross Gear": "Battle_Zone",
+          "Evolution Cross Gear": "Battle_Zone",
+          "Tamaseed": "Battle_Zone",
+          "Orega Aura": "Battle_Zone",
+          "Giga Orega Aura": "Battle_Zone",
+          "Castle": "Battle_Zone",
+          "Galaxy Castle": "Battle_Zone",
+          "D2 Field": "Battle_Zone",
+          "Historic Field": "Battle_Zone",
+          "Dragonic Field": "Battle_Zone",
+          "Dragheart Weapon": "Battle_Zone",
+          "Dragheart Fortress": "Battle_Zone",
+          "Psychic Cross Gear": "Battle_Zone",
+          "Spell": "Stack",
+          "Duelmate Spell": "Stack"
+        },
+        "autoPlayFromStack": {
+          "Spell": "Discard",
+          "Duelmate Spell": "Discard"
+        },
+        "sectionsDict": {
+          "Hand": {
+            "isDefaultSection": true,
+            "title": "Hand",
+            "isHidden": "opponent-only",
+            "height": "DEFAULT",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "autoPayFrom": true
+          },
+          "Discard": {
+            "isDefaultSection": true,
+            "title": "Discard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Graveyard",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Deck": {
+            "isDefaultSection": true,
+            "title": "Deck",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Stack": {
+            "isDefaultSection": true,
+            "title": "Stack",
+            "isHidden": "no",
+            "height": "HUGE",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Resolving",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Exile": {
+            "isDefaultSection": true,
+            "title": "Exile",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "ExileHidden": {
+            "isDefaultSection": true,
+            "title": "ExileHidden",
+            "isHidden": "yes",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Removed hidden",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Sideboard": {
+            "isDefaultSection": true,
+            "title": "Sideboard",
+            "isHidden": "no",
+            "height": "DEFAULT",
+            "alignment": "NONE",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": true,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Battle_Zone": {
+            "title": "Battle_Zone",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battle Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Shields": {
+            "title": "Shields",
+            "isHidden": "yes",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Shield Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Mana_Zone": {
+            "title": "Mana_Zone",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Mana Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Abyss": {
+            "title": "Abyss",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "DECK",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": false,
+            "displayedTitle": "Abyss Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          },
+          "Partner_Zone": {
+            "title": "Partner_Zone",
+            "isHidden": "no",
+            "height": "18",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Partner Zone",
+            "noQuickActions": false,
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false
+          }
+        }
+      }
+    }
+  }
+}
