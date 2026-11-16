@@ -5,7 +5,7 @@
     "backgrounds": [],
     "decksUrl": ""
   },
-  "customHelp": "FORMATS\n- Standard (Original): 40 cards, max 4 copies. No Hyperspatial/GR cards and no cards that start the game in the Battle Zone.\n- Advance: 40 cards, max 4 copies. Put Psychic, Dragheart and Duelmate cards in the 'Hyperspatial Zone' category (max 8); Gacharange creatures go to the GR Zone (max 12).\n- DueParty: 60 cards including your Partner (a creature costing 5+, put it in the 'Partner' category), 1 copy per card, every card must share your Partner's civilizations. 6 shields, 6-card hand. Extra turns and alternate wins are ignored; each player can use only 1 card with the same name per turn.\nHALL OF FAME: Premium Hall of Fame cards are banned and Hall of Fame cards are limited to 1 (checked by the deck builder). Duo Premium Hall of Fame: Momoking JO, Future King Dragon and Momokingdam X, Forbidden Hero can't be in the same deck (not checked automatically).\nPLAY\n(1) Shields are dealt face down from your deck at the start. When a shield is broken, move it to your hand (check Shield Trigger first).\n(2) Mana: drag one card from your hand to your Mana Zone each turn. Multicolor cards enter tapped.\n(3) Cards sent to the Abyss go to the Abyss Zone (public).\n(4) Evolution: G + click on the base creature, then click the evolution creature (Group/Attach).\n(5) The counter can be used to track turns.",
+  "customHelp": "FORMATS\n- Standard (Original): 40 cards, max 4 copies. No Hyperspatial/GR cards and no cards that start the game in the Battle Zone.\n- Advance: 40 cards, max 4 copies. Put Psychic, Dragheart and Duelmate cards in the 'Hyperspatial Zone' category (max 8); Gacharange creatures go to the GR Zone (max 12).\n- DueParty: 60 cards including your Partner (a creature costing 5+, put it in the 'Partner' category), 1 copy per card, every card must share your Partner's civilizations. 6 shields, 6-card hand. Extra turns and alternate wins are ignored; each player can use only 1 card with the same name per turn.\nHALL OF FAME: Premium Hall of Fame cards are banned and Hall of Fame cards are limited to 1 (checked by the deck builder). Duo Premium Hall of Fame: Momoking JO, Future King Dragon and Momokingdam X, Forbidden Hero can't be in the same deck (not checked automatically).\nPLAY\n(1) Shields are dealt face down from your deck at the start. When a shield is broken, move it to your hand (check Shield Trigger first).\n(2) Mana: drag one card from your hand to your Mana Zone each turn. Multicolor cards enter tapped.\n(3) Cards sent to the Abyss go to the Removed zone.\n(4) Evolution: G + click on the base creature, then click the evolution creature (Group/Attach).",
   "cardRotation": "90",
   "cards": {
     "dataUrl": "https://marcherfu.github.io/DueMaTCGArena/cardlist.json",
@@ -135,18 +135,16 @@
       "countersStartingValues": [
         0
       ],
-      "hideFacedDownCards": false,
+      "hideFacedDownCards": true,
       "sections": {
         "customSections": [
           "Battle_Zone",
           "Shields",
-          "Mana_Zone",
-          "Abyss"
+          "Mana_Zone"
         ],
         "layout": {
           "direction": "column",
           "isSymetricalForOpponents": false,
-          "isSymmetricalForOpponents": false,
           "content": [
             {
               "direction": "row",
@@ -154,7 +152,6 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
                   "section": "Battle_Zone",
@@ -168,33 +165,16 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
-                  "section": "Abyss",
-                  "style": {
-                    "width": "13.9vh"
-                  }
+                  "section": "Mana_Zone",
+                  "style": false
                 },
                 {
                   "section": "Shields",
                   "style": {
                     "width": "40%"
                   }
-                }
-              ]
-            },
-            {
-              "direction": "row",
-              "style": {
-                "align": "center"
-              },
-              "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
-              "content": [
-                {
-                  "section": "Mana_Zone",
-                  "style": false
                 }
               ]
             }
@@ -410,22 +390,6 @@
             "isGroupForbidden": false,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false
-          },
-          "Abyss": {
-            "title": "Abyss",
-            "isHidden": "no",
-            "height": "18",
-            "alignment": "DECK",
-            "opponentAlignment": false,
-            "noAutoPayTo": true,
-            "isHorizontalAllowed": false,
-            "displayedTitle": "Abyss Zone",
-            "noQuickActions": false,
-            "enterTapped": false,
-            "enterSpun": false,
-            "isGroupForbidden": false,
-            "keepTappedNewTurn": false,
-            "showHiddenCardInHistory": false
           }
         }
       }
@@ -471,20 +435,18 @@
       "countersStartingValues": [
         0
       ],
-      "hideFacedDownCards": false,
+      "hideFacedDownCards": true,
       "sections": {
         "customSections": [
           "Battle_Zone",
           "Shields",
           "Mana_Zone",
           "Hyperspatial",
-          "GR",
-          "Abyss"
+          "GR"
         ],
         "layout": {
           "direction": "column",
           "isSymetricalForOpponents": false,
-          "isSymmetricalForOpponents": false,
           "content": [
             {
               "direction": "row",
@@ -492,7 +454,6 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
                   "section": "Battle_Zone",
@@ -506,7 +467,6 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
                   "section": "Hyperspatial",
@@ -521,30 +481,14 @@
                   }
                 },
                 {
+                  "section": "Mana_Zone",
+                  "style": false
+                },
+                {
                   "section": "Shields",
                   "style": {
                     "width": "40%"
                   }
-                },
-                {
-                  "section": "Abyss",
-                  "style": {
-                    "width": "13.9vh"
-                  }
-                }
-              ]
-            },
-            {
-              "direction": "row",
-              "style": {
-                "align": "center"
-              },
-              "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
-              "content": [
-                {
-                  "section": "Mana_Zone",
-                  "style": false
                 }
               ]
             }
@@ -807,22 +751,6 @@
             "isGroupForbidden": false,
             "keepTappedNewTurn": false,
             "showHiddenCardInHistory": false
-          },
-          "Abyss": {
-            "title": "Abyss",
-            "isHidden": "no",
-            "height": "18",
-            "alignment": "DECK",
-            "opponentAlignment": false,
-            "noAutoPayTo": true,
-            "isHorizontalAllowed": false,
-            "displayedTitle": "Abyss Zone",
-            "noQuickActions": false,
-            "enterTapped": false,
-            "enterSpun": false,
-            "isGroupForbidden": false,
-            "keepTappedNewTurn": false,
-            "showHiddenCardInHistory": false
           }
         }
       }
@@ -868,19 +796,17 @@
       "countersStartingValues": [
         0
       ],
-      "hideFacedDownCards": false,
+      "hideFacedDownCards": true,
       "sections": {
         "customSections": [
           "Battle_Zone",
           "Shields",
           "Mana_Zone",
-          "Partner_Zone",
-          "Abyss"
+          "Partner_Zone"
         ],
         "layout": {
           "direction": "column",
           "isSymetricalForOpponents": false,
-          "isSymmetricalForOpponents": false,
           "content": [
             {
               "direction": "row",
@@ -888,7 +814,6 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
                   "section": "Battle_Zone",
@@ -902,7 +827,6 @@
                 "align": "center"
               },
               "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
               "content": [
                 {
                   "section": "Partner_Zone",
@@ -911,30 +835,14 @@
                   }
                 },
                 {
+                  "section": "Mana_Zone",
+                  "style": false
+                },
+                {
                   "section": "Shields",
                   "style": {
                     "width": "40%"
                   }
-                },
-                {
-                  "section": "Abyss",
-                  "style": {
-                    "width": "13.9vh"
-                  }
-                }
-              ]
-            },
-            {
-              "direction": "row",
-              "style": {
-                "align": "center"
-              },
-              "isSymetricalForOpponents": true,
-              "isSymmetricalForOpponents": true,
-              "content": [
-                {
-                  "section": "Mana_Zone",
-                  "style": false
                 }
               ]
             }
@@ -1146,22 +1054,6 @@
             "noAutoPayTo": true,
             "isHorizontalAllowed": true,
             "displayedTitle": "Mana Zone",
-            "noQuickActions": false,
-            "enterTapped": false,
-            "enterSpun": false,
-            "isGroupForbidden": false,
-            "keepTappedNewTurn": false,
-            "showHiddenCardInHistory": false
-          },
-          "Abyss": {
-            "title": "Abyss",
-            "isHidden": "no",
-            "height": "18",
-            "alignment": "DECK",
-            "opponentAlignment": false,
-            "noAutoPayTo": true,
-            "isHorizontalAllowed": false,
-            "displayedTitle": "Abyss Zone",
             "noQuickActions": false,
             "enterTapped": false,
             "enterSpun": false,
