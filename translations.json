@@ -1,6 +1,6 @@
 {
   "additionalLanguages": [
-    "ja"
+    "fr"
   ],
   "en": {
     "Card types": {
@@ -79,7 +79,7 @@
       "Japanese Name": "Japanese Name"
     }
   },
-  "ja": {
+  "fr": {
     "Card types": {
       "Castle": "城",
       "Creature": "クリーチャー",
